@@ -12,6 +12,7 @@
 
 .sjs-client-app__header .sjs-button {
   vertical-align: top;
+  margin-top: 1px;
 }
 
 .sjs-client-app__content {
@@ -38,7 +39,7 @@
   text-decoration: none;
   line-height: 40px;
   display: inline-block;
-  margin: 1px 10px;
+  margin-left: 20px;
   font-weight: normal;
 }
 

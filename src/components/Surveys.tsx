@@ -11,16 +11,16 @@ const Surveys = (): React.ReactElement => {
                 <tr>
                     <th>Survey name</th>
                     <th>
-                        <span className='sjs-button' title='increment' onClick={() => dispatch(add())}>add</span>                        
+                        <span className='sjs-button' title='increment' onClick={() => dispatch(add())}>Add survey</span>                        
                     </th>
                 </tr>
             {surveys.map(survey => 
                 <tr key={survey.id} className='sjs-surveys-list__row'>
                     <td><span>{survey.name}</span></td>
                     <td>
-                        <Link className='sjs-button' to={'run/' + survey.id}><span>run</span></Link>
-                        <Link className='sjs-button' to={'edit/' + survey.id}><span>edit</span></Link>
-                        <span className='sjs-button' onClick={() => dispatch(remove(survey.id))}>remove</span>
+                        <Link className='sjs-button' to={'run/' + survey.id}><span>Run</span></Link>
+                        <Link className='sjs-button' to={'edit/' + survey.id}><span>Edit</span></Link>
+                        <span className='sjs-button' onClick={() => dispatch(remove(survey.id))}>Remove</span>
                     </td>
                 </tr>
             )}
