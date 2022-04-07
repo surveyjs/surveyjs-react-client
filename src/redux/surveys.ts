@@ -33,8 +33,12 @@ const surveysSlice = createSlice({
                 state.splice(index, 1);
             }
         },
+        update: (state, action: PayloadAction<{id: string, json: any}>) => {
+            const survey = state.filter(s => s.id === action.payload.id)[0];
+            survey.json = action.payload.json;
+        },
     },
 })
 
-export const { add, remove } = surveysSlice.actions
+export const { add, remove, update } = surveysSlice.actions
 export default surveysSlice.reducer
