@@ -23,6 +23,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "survey-core": "^1.9.23",
+    "survey-creator-core": "^1.9.23",
+    "survey-creator-react": "^1.9.23",
     "survey-react-ui": "^1.9.23",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
