@@ -12,7 +12,7 @@ const defaultJSON = {
 let surveysCount = 1;
 function getDefaultJSON() {
     const surveyJSONSeed = JSON.parse(JSON.stringify(defaultJSON));
-    surveyJSONSeed.id = surveysCount++;
+    surveyJSONSeed.id = '' + surveysCount++;
     surveyJSONSeed.name += surveyJSONSeed.id;
     return surveyJSONSeed;
 }

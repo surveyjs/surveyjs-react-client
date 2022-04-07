@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Link, Routes } from 'react-router-dom'
 import Home from "../pages/Home"
+import Run from "../pages/Run"
 
 export const NavBar = () => (
     <>
         <Link to="/"><button type="button">Home</button></Link>
         <Link to="/hello"><button type="button">Hello</button></Link>
-        <Link to="/counter"><button type="button">Counter</button></Link>
     </>
 )
 
@@ -18,6 +18,7 @@ const Routing = (): React.ReactElement => (
         <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/hello" element={<Hello/>}></Route>
+            <Route path="/run/:id" element={<Run/>}></Route>
             <Route element={<NoMatch/>}></Route>
         </Routes>
     </>
