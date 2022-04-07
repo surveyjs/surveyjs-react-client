@@ -5,7 +5,9 @@ const Edit = () => {
     const { id } = useParams();
     return (<>
         <h1>{'Edit survey ' + id}</h1>
-        <Editor id={id as string}/>
+        <div className='sjs-editor-container'>
+            <Editor id={id as string}/>
+        </div>
     </>);
 }
 

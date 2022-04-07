@@ -1,22 +1,30 @@
 import React from 'react'
 import { add, remove } from '../redux/surveys'
 import { useReduxDispatch, useReduxSelector } from '../redux'
+import { Link } from 'react-router-dom'
 
 const Surveys = (): React.ReactElement => {
     const surveys = useReduxSelector(state => state.surveys)
     const dispatch = useReduxDispatch()
 
-    return (<>
+    return (<table className='sjs-surveys-list'>
+                <tr>
+                    <th>Survey name</th>
+                    <th>
+                        <span className='sjs-button' title='increment' onClick={() => dispatch(add())}>add</span>                        
+                    </th>
+                </tr>
             {surveys.map(survey => 
-                <div key={survey.id}>
-                    <span>{survey.name}</span>
-                    <a className='sjs-button' title='run' href={'run/' + survey.id}>run</a>
-                    <a className='sjs-button' title='edit' href={'edit/' + survey.id}>edit</a>
-                    <span className='sjs-button' title='remove' onClick={() => dispatch(remove(survey.id))}>remove</span>
-                </div>
+                <tr key={survey.id} className='sjs-surveys-list__row'>
+                    <td><span>{survey.name}</span></td>
+                    <td>
+                        <Link className='sjs-button' to={'run/' + survey.id}><span>run</span></Link>
+                        <Link className='sjs-button' to={'edit/' + survey.id}><span>edit</span></Link>
+                        <span className='sjs-button' onClick={() => dispatch(remove(survey.id))}>remove</span>
+                    </td>
+                </tr>
             )}
-            <span className='sjs-button' title='increment' onClick={() => dispatch(add())}>add</span>
-    </>)
+    </table>)
 }
 
 export default Surveys

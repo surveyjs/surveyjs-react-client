@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
-import Routing, { NavBar } from './routes'
+import Content, { NavBar } from './routes'
 import store from './redux';
-// import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg';
 
 function App() {
   return (
@@ -12,25 +12,13 @@ function App() {
         <Router>
           <div className="sjs-client-app">
             <header className="sjs-client-app__header">
-              {/* <img src={logo} className="App-logo" alt="logo" /> */}
-              {/* <p>
-                Edit <code>src/App.tsx</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a> */}
+              <img src={logo} className="sjs-client-app__logo" alt="logo" height={'50px'} />
               <NavBar/>
             </header>
-            <main>
-              <Routing/>
+            <main className="sjs-client-app__content">
+              <Content/>
             </main>
             <footer className="sjs-client-app__footer">
-
             </footer>
           </div>
         </Router>

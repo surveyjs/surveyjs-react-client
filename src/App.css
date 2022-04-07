@@ -1,6 +1,33 @@
-.sjs-client-app {}
+.sjs-client-app {
+  color: #404040;
+}
 
-.sjs-client-app__header {}
+.sjs-client-app__logo {}
+
+.sjs-client-app__header {
+  background-color: var(--primary, #19b394);
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.sjs-client-app__header .sjs-button {
+  vertical-align: top;
+}
+
+.sjs-client-app__content {
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  user-select: none;
+}
+
+.sjs-client-app__content--surveys-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .sjs-client-app__footer {}
 
@@ -9,10 +36,24 @@
   padding: 0 10px;
   background-color: azure;
   text-decoration: none;
-  color: black;
-  border-radius: 5px;
+  line-height: 40px;
+  display: inline-block;
+  margin: 1px 10px;
+  font-weight: normal;
 }
 
 .sjs-button:hover {
-  background-color: lightblue;
+  background-color: var(--primary, #19b394);
+  color: white;
 }
+
+.sjs-editor-container {
+  height: calc(100% - 88px);
+}
+
+.sjs-surveys-list {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sjs-surveys-list__row {}
