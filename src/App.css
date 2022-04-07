@@ -25,7 +25,8 @@
   user-select: none;
 }
 
-.sjs-client-app__content--surveys-list {
+.sjs-client-app__content--surveys-list,
+.sjs-client-app__content--about {
   max-width: 800px;
   margin: 0 auto;
 }
