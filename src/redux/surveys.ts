@@ -1,14 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { defaultJSON } from '../models/survey'
 
-const defaultJSON = {
-    id: '',
-    name: 'New Survey',
-    json: {
-        elements: [
-            { type: 'radiogroup', name: 'question1', choices: [ '1', '2', '3' ] }
-        ]
-    }
-}
 let surveysCount = 1;
 function getDefaultJSON() {
     const surveyJSONSeed = JSON.parse(JSON.stringify(defaultJSON));
@@ -17,27 +10,51 @@ function getDefaultJSON() {
     return surveyJSONSeed;
 }
 
-const initialState: Array<any> = [getDefaultJSON()]
+const initialState: { surveys: Array<any>, status: string, error: any } = {
+    surveys: [],
+    status: 'idle',
+    error: null
+}
 
 const surveysSlice = createSlice({
     name: 'surveys',
     initialState,
     reducers: {
         add: (state, action: PayloadAction<void>) => {
-            state.push(getDefaultJSON());
+            state.surveys.push(getDefaultJSON());
         },
         remove: (state, action: PayloadAction<string>) => {
-            const survey = state.filter(s => s.id === action.payload)[0];
-            const index = state.indexOf(survey);
+            const survey = state.surveys.filter(s => s.id === action.payload)[0];
+            const index = state.surveys.indexOf(survey);
             if(index >= 0) {
-                state.splice(index, 1);
+                state.surveys.splice(index, 1);
             }
         },
         update: (state, action: PayloadAction<{id: string, json: any}>) => {
-            const survey = state.filter(s => s.id === action.payload.id)[0];
+            const survey = state.surveys.filter(s => s.id === action.payload.id)[0];
             survey.json = action.payload.json;
         },
     },
+    extraReducers(builder) {
+        builder
+          .addCase(load.pending, (state, action) => {
+            state.status = 'loading'
+          })
+          .addCase(load.fulfilled, (state, action) => {
+            state.status = 'succeeded'
+            // Add any fetched posts to the array
+            state.surveys = state.surveys.concat(action.payload)
+          })
+          .addCase(load.rejected, (state, action) => {
+            state.status = 'failed'
+            state.error = action.error.message
+          })
+      }
+})
+
+export const load = createAsyncThunk('surveys/load', async () => {
+    const response = await axios.get('/api/surveys')
+    return response.data
 })
 
 export const { add, remove, update } = surveysSlice.actions

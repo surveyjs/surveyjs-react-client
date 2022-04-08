@@ -8,7 +8,7 @@ import 'survey-core/defaultV2.css'
 StylesManager.applyTheme("defaultV2");
 
 const Runner = (params: { id: string }): React.ReactElement => {
-    const surveys = useReduxSelector(state => state.surveys)
+    const surveys = useReduxSelector(state => state.surveys.surveys)
     const dispatch = useReduxDispatch()
 
     const survey = surveys.filter(s => s.id === params.id)[0];

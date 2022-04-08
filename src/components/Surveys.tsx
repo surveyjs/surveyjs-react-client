@@ -1,11 +1,19 @@
-import React from 'react'
-import { add, remove } from '../redux/surveys'
+import React, { useEffect } from 'react'
+import { add, load, remove } from '../redux/surveys'
 import { useReduxDispatch, useReduxSelector } from '../redux'
 import { Link } from 'react-router-dom'
 
 const Surveys = (): React.ReactElement => {
-    const surveys = useReduxSelector(state => state.surveys)
+    const surveys = useReduxSelector(state => state.surveys.surveys)
     const dispatch = useReduxDispatch()
+
+    const postStatus = useReduxSelector(state => state.surveys.status)
+
+    useEffect(() => {
+      if (postStatus === 'idle') {
+        dispatch(load())
+      }
+    }, [postStatus, dispatch])    
 
     return (<table className='sjs-surveys-list'>
                 <tr>

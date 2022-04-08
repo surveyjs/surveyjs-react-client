@@ -5,7 +5,7 @@ import { SurveyCreator, SurveyCreatorComponent } from 'survey-creator-react'
 import 'survey-creator-core/survey-creator-core.css'
 
 const Editor = (params: { id: string }): React.ReactElement => {
-    const surveys = useReduxSelector(state => state.surveys)
+    const surveys = useReduxSelector(state => state.surveys.surveys)
     const dispatch = useReduxDispatch()
     const survey = surveys.filter(s => s.id === params.id)[0];
 
