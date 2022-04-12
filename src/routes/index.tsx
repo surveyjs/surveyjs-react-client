@@ -4,6 +4,7 @@ import Home from "../pages/Home"
 import About from "../pages/About"
 import Run from "../pages/Run"
 import Edit from "../pages/Edit"
+import Results from "../pages/Results"
 
 export const NavBar = () => (
     <>
@@ -21,6 +22,7 @@ const Content = (): React.ReactElement => (
             <Route path="/about" element={<About/>}></Route>
             <Route path="/run/:id" element={<Run/>}></Route>
             <Route path="/edit/:id" element={<Edit/>}></Route>
+            <Route path="/results/:id" element={<Results/>}></Route>
             <Route element={<NoMatch/>}></Route>
         </Routes>
     </>

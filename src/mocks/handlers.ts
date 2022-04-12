@@ -55,7 +55,7 @@ export const handlers = [
     rest.get('/api/results', (req, res, ctx) => {
         const postId = req.url.searchParams.get('postId')
         return res(
-            ctx.json(getResults(postId as string)),
+            ctx.json({ id: postId, data: getResults(postId as string) }),
         )
     })
 ]
