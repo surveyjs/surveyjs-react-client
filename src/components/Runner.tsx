@@ -1,5 +1,4 @@
 import React from 'react'
-import { add, remove } from '../redux/surveys'
 import { useReduxDispatch, useReduxSelector } from '../redux'
 import { Model, StylesManager } from 'survey-core'
 import { Survey } from 'survey-react-ui'

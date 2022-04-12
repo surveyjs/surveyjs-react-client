@@ -13,6 +13,7 @@ test('renders home page header', () => {
 test('get surveys list', async () => {
   const loadResult = await store.dispatch(load())
   const surveys = loadResult.payload
-  expect(surveys.length).toBe(1)
-  expect(surveys[0].name).toBe('New Survey')
-})
+  expect(surveys.length).toBe(2)
+  expect(surveys[0].name).toBe('Product feedback survey')
+  expect(surveys[1].name).toBe('Customer and his/her partner income survey')
+});

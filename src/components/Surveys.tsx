@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { add, load, remove } from '../redux/surveys'
+import { create, load, remove } from '../redux/surveys'
 import { useReduxDispatch, useReduxSelector } from '../redux'
 import { Link } from 'react-router-dom'
 
@@ -19,7 +19,7 @@ const Surveys = (): React.ReactElement => {
                 <tr>
                     <th>Survey name</th>
                     <th>
-                        <span className='sjs-button' title='increment' onClick={() => dispatch(add())}>Add survey</span>                        
+                        <span className='sjs-button' title='increment' onClick={() => dispatch(create())}>Add survey</span>                        
                     </th>
                 </tr>
             {surveys.map(survey => 
