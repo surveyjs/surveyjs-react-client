@@ -6,8 +6,10 @@ import store from './redux';
 
 test('renders home page header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/My Surveys/i);
+  const linkElement = screen.getByText(/My Surveys/i, { selector: 'span' });
   expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/My Surveys/i, { selector: 'h1' });
+  expect(headerElement).toBeInTheDocument();
 });
 
 test('get surveys list', async () => {
