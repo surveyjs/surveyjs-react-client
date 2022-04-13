@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { ISurveyDefinition } from '../models/survey'
+import { apiBaseAddress, ISurveyDefinition } from '../models/survey'
 
 const initialState: { surveys: Array<ISurveyDefinition>, status: string, error: any } = {
     surveys: [],
@@ -65,27 +65,27 @@ const surveysSlice = createSlice({
 })
 
 export const load = createAsyncThunk('surveys/load', async () => {
-    const response = await axios.get('/api/surveys')
+    const response = await axios.get(apiBaseAddress + '/getActive')
     return response.data
 })
 
 export const get = createAsyncThunk('surveys/get', async (id: string) => {
-    const response = await axios.get('/api/getSurvey?surveyId=' + id)
+    const response = await axios.get(apiBaseAddress + '/getSurvey?surveyId=' + id)
     return response.data
 })
 
 export const create = createAsyncThunk('surveys/create', async () => {
-    const response = await axios.get('/api/create')
+    const response = await axios.get(apiBaseAddress + '/create')
     return response.data
 })
 
 export const remove = createAsyncThunk('surveys/delete', async (id: string) => {
-    const response = await axios.get('/api/delete?id=' + id)
+    const response = await axios.get(apiBaseAddress + '/delete?id=' + id)
     return response.data
 })
 
 export const update = createAsyncThunk('surveys/update', async (data: {id: string, json: any}) => {
-    const response = await axios.post('/api/changeJson', data)
+    const response = await axios.post(apiBaseAddress + '/changeJson', data)
     return response.data
 })
 
