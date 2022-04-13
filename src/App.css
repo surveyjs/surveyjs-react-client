@@ -38,6 +38,15 @@
   user-select: none;
 }
 
+h1 {
+  padding-left: 24px;
+}
+
+.sjs-client-app__content--about h1,
+.sjs-client-app__content--surveys-list h1 {
+  padding: 0;
+}
+
 .sjs-client-app__content--surveys-list,
 .sjs-client-app__content--about {
   max-width: 800px;
@@ -47,5 +56,19 @@
 .sjs-client-app__footer {}
 
 .sjs-editor-container {
+  height: calc(100% - 2px);
+}
+
+.sjs-results-container {
   height: calc(100% - 88px);
+}
+
+.sjs-results-content {
+  height: 100%;
+}
+
+.sjs-results-placeholder {
+  line-height: 200px;
+  text-align: center;
+  border: 1px dotted lightgray;
 }

@@ -30,7 +30,10 @@ const Viewer = (params: { id: string }): React.ReactElement => {
     }, [dispatch])    
 
     return (<>
-            <div ref={visContainerRef}>
+            <div className='sjs-results-content' ref={visContainerRef}>
+                <div className='sjs-results-placeholder'>
+                    <span>This survey doesn't have any answers yet</span>
+                </div>
             </div>
     </>)
 }
