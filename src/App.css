@@ -1,8 +1,11 @@
 .sjs-client-app {
   color: #404040;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.sjs-client-app__logo {}
+.sjs-client-app__logo {
+  vertical-align: middle;
+}
 
 .sjs-client-app__header {
   background-color: var(--primary, #19b394);
@@ -10,9 +13,18 @@
   padding-bottom: 0;
 }
 
-.sjs-client-app__header .sjs-button {
-  vertical-align: top;
-  margin-top: 1px;
+.sjs-nav-button {
+  display: inline-block;
+  margin-left: 24px;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+  line-height: 40px;
+  color: white;
+}
+
+.sjs-nav-button.active {
+  text-decoration: underline;
 }
 
 .sjs-client-app__content {
@@ -33,29 +45,6 @@
 
 .sjs-client-app__footer {}
 
-.sjs-button {
-  cursor: pointer;
-  padding: 0 10px;
-  background-color: azure;
-  text-decoration: none;
-  line-height: 40px;
-  display: inline-block;
-  margin-left: 20px;
-  font-weight: normal;
-}
-
-.sjs-button:hover {
-  background-color: var(--primary, #19b394);
-  color: white;
-}
-
 .sjs-editor-container {
   height: calc(100% - 88px);
 }
-
-.sjs-surveys-list {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.sjs-surveys-list__row {}

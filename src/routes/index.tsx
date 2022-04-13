@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link, Routes } from 'react-router-dom'
+import { Route, NavLink, Routes } from 'react-router-dom'
 import Home from "../pages/Home"
 import About from "../pages/About"
 import Run from "../pages/Run"
@@ -8,8 +8,8 @@ import Results from "../pages/Results"
 
 export const NavBar = () => (
     <>
-        <Link className='sjs-button' to="/"><span>Home</span></Link>
-        <Link className='sjs-button' to="/about"><span>About</span></Link>
+        <NavLink className='sjs-nav-button' to="/"><span>My Surveys</span></NavLink>
+        <NavLink className='sjs-nav-button' to="/about"><span>About</span></NavLink>
     </>
 )
 

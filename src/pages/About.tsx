@@ -3,6 +3,6 @@ const About = () => (<div className='sjs-client-app__content--about'>
     <p>
         This application demonatrates how to implement a very basic SurveyJS service client. It can be used with any backend similar described here - https://surveyjs.io/Help/Index?apiType=public
     </p>
-    </div>)
+</div>)
 
 export default About;

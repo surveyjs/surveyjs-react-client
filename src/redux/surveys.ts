@@ -69,6 +69,11 @@ export const load = createAsyncThunk('surveys/load', async () => {
     return response.data
 })
 
+export const get = createAsyncThunk('surveys/get', async (id: string) => {
+    const response = await axios.get('/api/getSurvey?surveyId=' + id)
+    return response.data
+})
+
 export const create = createAsyncThunk('surveys/create', async () => {
     const response = await axios.get('/api/create')
     return response.data
