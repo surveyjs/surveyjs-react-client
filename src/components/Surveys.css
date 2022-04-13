@@ -26,8 +26,8 @@
 }
 
 .sjs-button:hover {
-    background-color: var(--primary, #19b394);
-    color: white;
+    /* background-color: var(--primary, #19b394); */
+    background-color: var(--primary-light, rgba(25, 179, 148, 0.1));
 }
 
 .sjs-add-btn {
@@ -44,9 +44,8 @@
 
 .sjs-add-btn:hover,
 .sjs-add-btn:focus {
-    color: var(--primary, #19b394);
     border-color: var(--primary, #19b394);
-    background: white;
+    background-color: white;
 }
 
 .sjs-remove-btn {
@@ -55,5 +54,6 @@
 
 .sjs-remove-btn:hover,
 .sjs-remove-btn:focus {
-    background-color: var(--danger, #e60a3e);
+    /* background-color: var(--danger, #e60a3e); */
+    background-color: var(--danger-light, rgba(230, 10, 62, 0.1));
 }

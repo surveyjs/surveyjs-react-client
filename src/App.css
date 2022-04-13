@@ -23,6 +23,7 @@
   color: white;
 }
 
+.sjs-nav-button:hover,
 .sjs-nav-button.active {
   text-decoration: underline;
 }
