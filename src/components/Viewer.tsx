@@ -3,9 +3,9 @@ import { useReduxDispatch, useReduxSelector } from '../redux'
 import { load } from '../redux/results'
 import { get } from '../redux/surveys'
 import { Model } from 'survey-core'
-import "tabulator-tables/dist/css/tabulator.css"
-import "survey-analytics/survey.analytics.tabulator.css"
-const SurveyAnalyticsTabulator = require("survey-analytics/survey.analytics.tabulator")
+import 'tabulator-tables/dist/css/tabulator.css'
+import 'survey-analytics/survey.analytics.tabulator.css'
+const SurveyAnalyticsTabulator = require('survey-analytics/survey.analytics.tabulator')
 
 const Viewer = (params: { id: string }): React.ReactElement => {
     const visContainerRef = useRef<HTMLDivElement>(null);
@@ -19,10 +19,10 @@ const Viewer = (params: { id: string }): React.ReactElement => {
             const data = resultsAction.payload.data
             if (data.length > 0 && visContainerRef.current) {
                 var model = new Model(survey.json);
-                visContainerRef.current.innerHTML = "";
+                visContainerRef.current.innerHTML = '';
                 var surveyAnalyticsTabulator = new SurveyAnalyticsTabulator.Tabulator(
                     model,
-                    data
+                    data.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item)
                   );
                 surveyAnalyticsTabulator.render(visContainerRef.current);
             }

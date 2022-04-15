@@ -13,14 +13,18 @@ const Editor = (params: { id: string }): React.ReactElement => {
     const creator = new SurveyCreator(options);
     creator.isAutoSave = true;
     creator.saveSurveyFunc = (saveNo: number, callback: (no: number, success: boolean) => void) => {
-        dispatch(update({ id: params.id, json: creator.JSON }))
+        dispatch(update({ id: params.id, json: creator.JSON, text: creator.text }))
         callback(saveNo, true);
     }
 
     useEffect(() => {
         (async () => {
             const surveyAction = await dispatch(get(params.id))
-            creator.JSON = surveyAction.payload.json
+            if(typeof surveyAction.payload.json === 'object') {
+                creator.JSON = surveyAction.payload.json
+            } else {
+                creator.text = surveyAction.payload.json
+            }
         })()
     }, [dispatch])
 

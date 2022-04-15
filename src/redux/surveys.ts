@@ -84,7 +84,7 @@ export const remove = createAsyncThunk('surveys/delete', async (id: string) => {
     return response.data
 })
 
-export const update = createAsyncThunk('surveys/update', async (data: {id: string, json: any}) => {
+export const update = createAsyncThunk('surveys/update', async (data: {id: string, json: any, text: string}) => {
     const response = await axios.post(apiBaseAddress + '/changeJson', data)
     return response.data
 })

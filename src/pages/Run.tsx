@@ -18,7 +18,7 @@ const Run = () => {
     model
         .onComplete
         .add((sender: Model) => {
-            dispatch(post({postId: id as string, surveyResult: sender.data}))
+            dispatch(post({postId: id as string, surveyResult: sender.data, surveyResultText: JSON.stringify(sender.data)}))
         });    
 
     return (<>

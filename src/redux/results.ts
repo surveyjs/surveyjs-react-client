@@ -7,7 +7,7 @@ export const load = createAsyncThunk('results/load', async (id: string) => {
     return response.data
 })
 
-export const post = createAsyncThunk('results/post', async (data: {postId: string, surveyResult: any}) => {
+export const post = createAsyncThunk('results/post', async (data: {postId: string, surveyResult: any, surveyResultText: string}) => {
   const response = await axios.post(apiBaseAddress + '/post', data);
   return response.data
 })
