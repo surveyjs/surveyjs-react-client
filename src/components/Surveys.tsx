@@ -31,7 +31,7 @@ const Surveys = (): React.ReactElement => {
             )}
         </table>
         <div className='sjs-surveys-list__footer'>
-            <span className='sjs-button sjs-add-btn' title='increment' onClick={() => dispatch(create())}>Add survey</span>                        
+            <span className='sjs-button sjs-add-btn' title='increment' onClick={() => dispatch(create())}>Add Survey</span>                        
         </div>
     </>)
 }

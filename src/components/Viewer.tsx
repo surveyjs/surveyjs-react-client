@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useReduxDispatch, useReduxSelector } from '../redux'
+import { useReduxDispatch } from '../redux'
 import { load } from '../redux/results'
 import { get } from '../redux/surveys'
 import { Model } from 'survey-core'

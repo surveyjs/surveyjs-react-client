@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useReduxDispatch, useReduxSelector } from '../redux'
+import { useReduxDispatch } from '../redux'
 import { get, update } from '../redux/surveys'
 import { SurveyCreator, SurveyCreatorComponent } from 'survey-creator-react'
 import 'survey-creator-core/survey-creator-core.css'
