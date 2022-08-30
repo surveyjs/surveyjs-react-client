@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/surveyjs/surveyjs-react-client/actions/workflows/build-node.js.yml/badge.svg)](https://github.com/surveyjs/surveyjs-react-client/actions/workflows/build-node.js.yml)
+
 # SurveyJS React Application
 
 This project is a client-side React application that uses [SurveyJS](https://surveyjs.io/) components. The application displays a list of surveys with the following buttons that perform actions on the surveys:
