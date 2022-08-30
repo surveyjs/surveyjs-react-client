@@ -16,6 +16,6 @@ test('get surveys list', async () => {
   const loadResult = await store.dispatch(load())
   const surveys = loadResult.payload
   expect(surveys.length).toBe(2)
-  expect(surveys[0].name).toBe('Product feedback survey')
-  expect(surveys[1].name).toBe('Customer and his/her partner income survey')
+  expect(surveys[0].name).toBe('Product Feedback Survey')
+  expect(surveys[1].name).toBe('Customer and their partner income survey')
 });
