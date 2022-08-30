@@ -27,7 +27,7 @@ const Viewer = (params: { id: string }): React.ReactElement => {
                 surveyAnalyticsTabulator.render(visContainerRef.current);
             }
         })()
-    }, [dispatch])    
+    }, [dispatch, params.id])    
 
     return (<>
             <div className='sjs-results-content' ref={visContainerRef}>
