@@ -15,13 +15,13 @@
     "@types/react-router": "^5.1.18",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^0.26.1",
-    "connected-react-router": "^6.9.2",
-    "history": "^5.3.0",
+    "connected-react-router": "6.9.3",
+    "history": "5.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.8",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
+    "react-router": "6.3.0",
+    "react-router-dom": "6.3.0",
     "react-scripts": "5.0.0",
     "survey-analytics": "latest",
     "survey-core": "latest",
@@ -60,5 +60,12 @@
   },
   "devDependencies": {
     "msw": "^0.39.2"
+  },
+  "overrides": {
+    "connected-react-router": {
+      "react": "^18.0.0",
+      "react-router": "6.3.0",
+      "history": "5.3.0"
+    }
   }
 }
