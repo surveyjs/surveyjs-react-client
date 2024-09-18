@@ -28,6 +28,7 @@
     "survey-creator-core": "latest",
     "survey-creator-react": "latest",
     "survey-react-ui": "latest",
+    "tabulator-tables": "^6.2.5",
     "typescript": "^4.9.5",
     "web-vitals": "^4.2.3"
   },
