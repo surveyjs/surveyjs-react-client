@@ -28,8 +28,8 @@
     "survey-creator-core": "latest",
     "survey-creator-react": "latest",
     "survey-react-ui": "latest",
-    "typescript": "^4.6.3",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.9.5",
+    "web-vitals": "^4.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -59,7 +59,7 @@
     "workerDirectory": "public"
   },
   "devDependencies": {
-    "msw": "^0.39.2"
+    "msw": "^2.4.8"
   },
   "overrides": {
     "connected-react-router": {
