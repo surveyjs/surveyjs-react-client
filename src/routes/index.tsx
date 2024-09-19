@@ -8,8 +8,8 @@ import Results from "../pages/Results"
 
 export const NavBar = () => (
     <>
-        <NavLink className='sjs-nav-button' to="/"><span>My Surveys</span></NavLink>
-        <NavLink className='sjs-nav-button' to="/about"><span>About</span></NavLink>
+        <NavLink className='sjs-nav-button' to="/"><span>Mis encuestas</span></NavLink>
+        <NavLink className='sjs-nav-button' to="/about"><span>Acerca de</span></NavLink>
     </>
 )
 

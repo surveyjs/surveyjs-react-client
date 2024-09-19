@@ -22,16 +22,16 @@ const Surveys = (): React.ReactElement => {
                 <tr key={survey.id} className='sjs-surveys-list__row'>
                     <td><span>{survey.name}</span></td>
                     <td>
-                        <Link className='sjs-button' to={'run/' + survey.id}><span>Run</span></Link>
-                        <Link className='sjs-button' to={'edit/' + survey.id}><span>Edit</span></Link>
-                        <Link className='sjs-button' to={'results/' + survey.id}><span>Results</span></Link>
-                        <span className='sjs-button sjs-remove-btn' onClick={() => dispatch(remove(survey.id))}>Remove</span>
+                        <Link className='sjs-button' to={'run/' + survey.id}><span>Correr</span></Link>
+                        <Link className='sjs-button' to={'edit/' + survey.id}><span>Editar</span></Link>
+                        <Link className='sjs-button' to={'results/' + survey.id}><span>Resultados</span></Link>
+                        <span className='sjs-button sjs-remove-btn' onClick={() => dispatch(remove(survey.id))}>Remover</span>
                     </td>
                 </tr>
             )}
         </table>
         <div className='sjs-surveys-list__footer'>
-            <span className='sjs-button sjs-add-btn' title='increment' onClick={() => dispatch(create())}>Add Survey</span>                        
+            <span className='sjs-button sjs-add-btn' title='increment' onClick={() => dispatch(create())}>Añadir Encuesta</span>                        
         </div>
     </>)
 }
