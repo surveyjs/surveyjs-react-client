@@ -1,12 +1,9 @@
 import { useParams } from 'react-router'
 import { useReduxDispatch, useReduxSelector } from '../redux'
 import { post } from '../redux/results'
-import { Model, StylesManager } from 'survey-core'
+import { Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
-import 'survey-core/defaultV2.css'
-
-StylesManager.applyTheme("defaultV2")
-
+import 'survey-core/survey-core.css'
 
 const Run = () => {
     const { id } = useParams();
