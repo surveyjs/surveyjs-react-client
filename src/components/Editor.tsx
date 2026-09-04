@@ -1,8 +1,13 @@
 import React, { useEffect, useMemo } from 'react'
 import { useReduxDispatch } from '../redux'
 import { get, update } from '../redux/surveys'
+import { registerSurveyTheme } from 'survey-creator-core'
 import { SurveyCreator, SurveyCreatorComponent } from 'survey-creator-react'
+import SurveyTheme from 'survey-core/themes'
+import 'survey-core/survey-core.css'
 import 'survey-creator-core/survey-creator-core.css'
+
+registerSurveyTheme(SurveyTheme);
 
 const Editor = (params: { id: string }): React.ReactElement => {
     const dispatch = useReduxDispatch()
@@ -10,11 +15,11 @@ const Editor = (params: { id: string }): React.ReactElement => {
         const options = {
             showLogicTab: true,
             showThemeTab: true,
-            showTranslationTab: true
+            showTranslationTab: true,
+            autoSaveEnabled: true
         };
         return new SurveyCreator(options);
     }, []);
-    creator.isAutoSave = true;
     creator.saveSurveyFunc = (saveNo: number, callback: (no: number, success: boolean) => void) => {
         dispatch(update({ id: params.id, json: creator.JSON, text: creator.text }))
         callback(saveNo, true);
